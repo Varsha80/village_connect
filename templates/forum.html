@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Post a Message to the Community</h2>
+    <form method="POST">
+        <input type="text" name="content" placeholder="Your message" required>
+        <input type="number" name="user_id" placeholder="User ID" required>
+        <button type="submit">Post</button>
+    </form>
+</div>
+
+{% for post in posts %}
+<div class="service-entry">
+    <p>{{ post.content }}</p>
+    <small><strong>User ID:</strong> {{ post.user_id }}</small>
+</div>
+{% endfor %}
+{% endblock %}
